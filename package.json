@@ -1,0 +1,16 @@
+{
+  "name": "generate-release-notes",
+  "version": "1.0.0",
+  "description": "Strongly typed release notes generated via separate files using Node and TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "gen:release-notes": "ts-node -P tsconfig.node.json tools/generateReleaseNotesData.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cory House",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
