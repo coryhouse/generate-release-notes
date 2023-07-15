@@ -3,10 +3,6 @@ import fs, { readdirSync } from "fs";
 import path from "path";
 import chalk from "chalk";
 
-export const paths = {
-  releaseNotes: path.join(__dirname, "../src", "releaseNotes"),
-};
-
 export function getFiles(filepath: string) {
   return fs.readdirSync(filepath).filter(function (file) {
     return fs.statSync(path.join(filepath, file)).isFile();
@@ -33,7 +29,7 @@ export function fileExists(filePath: string) {
   return fs.existsSync(filePath);
 }
 
-export function getDirectories(source) {
+export function getDirectories(source: string) {
   return readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
